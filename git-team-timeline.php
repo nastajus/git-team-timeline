@@ -16,7 +16,7 @@
  * License: GPL2
  */
 
-add_action('publish_post', 'my_function');
+add_action('publish_post', 'my_function');  //actions are like events.
 
 function my_function()
 {
@@ -24,5 +24,14 @@ function my_function()
     $tags = array('programming', 'tutorials', 'wordpress');
     wp_set_post_tags($post_ID, $tags, true); //true means append, false means overwrite
 }
+
+
+function do_something_cool()
+{
+    //do something
+}
+
+add_action('a_hook', 'do_something_cool'); //this is a pattern in wordpress development.  this teaches the term hook. so hooks connect into actions of wordpress. actions can be found in their API.
+add_filter('a_hook', 'do_something_cool');
 
 ?>
