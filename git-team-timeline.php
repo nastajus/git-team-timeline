@@ -26,12 +26,11 @@ function my_function()
 }
 
 
-function do_something_cool()
+function gtt_remove_dashboard_widget()
 {
-    //do something
+    remove_meta_box('dashboard_primary', 'dashboard', 'ui-sortable-handle');
 }
 
-add_action('a_hook', 'do_something_cool'); //$tag (req), $function_to_add (req), (optional), (optional).
-add_filter('a_hook', 'do_something_cool'); //so, to reiterate, tags are == hooks, hooks are == actions... overly simplistic.
+add_action('wp_dashboard_setup', 'gtt_remove_dashboard_widget');
 
 ?>
