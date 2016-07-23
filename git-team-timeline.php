@@ -22,7 +22,7 @@ function my_function()
 {
     $post_ID = get_the_ID();
     $tags = array('programming', 'tutorials', 'wordpress');
-    wp_set_post_tags($post_ID, $tags, true); //true means append, false means overwrite
+    wp_set_post_tags($post_ID, $tags, true);
 }
 
 
@@ -31,7 +31,7 @@ function do_something_cool()
     //do something
 }
 
-add_action('a_hook', 'do_something_cool'); //this is a pattern in wordpress development.  this teaches the term hook. so hooks connect into actions of wordpress. actions can be found in their API.
-add_filter('a_hook', 'do_something_cool');
+add_action('a_hook', 'do_something_cool'); //$tag (req), $function_to_add (req), (optional), (optional).
+add_filter('a_hook', 'do_something_cool'); //so, to reiterate, tags are == hooks, hooks are == actions... overly simplistic.
 
 ?>
