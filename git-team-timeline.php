@@ -16,4 +16,13 @@
  * License: GPL2
  */
 
+add_action('publish_post', 'my_function');
+
+function my_function()
+{
+    $post_ID = get_the_ID();
+    $tags = array('programming', 'tutorials', 'wordpress');
+    wp_set_post_tags($post_ID, $tags, true); //true means append, false means overwrite
+}
+
 ?>
